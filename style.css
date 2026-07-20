@@ -1,1 +1,238 @@
+:root{
+  --red:#C41E2A;
+  --red-dark:#8B1420;
+  --black:#141110;
+  --charcoal:#1E1A19;
+  --white:#FFFFFF;
+  --cream:#FFF7EC;
+  --gold:#D4A017;
+  --gold-light:#F0C64A;
+}
 
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Tajawal',sans-serif;
+  background:var(--white);
+  color:var(--black);
+  margin:0;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{
+  font-family:'Cairo',sans-serif;
+  font-weight:900;
+}
+
+/* ---------- Nav ---------- */
+#navbar{
+  position:fixed;top:0;right:0;left:0;z-index:100;
+  transition:all .35s ease;
+  background:rgba(20,17,16,0);
+  padding:22px 0;
+}
+#navbar.scrolled{
+  background:rgba(20,17,16,0.96);
+  padding:10px 0;
+  box-shadow:0 4px 20px rgba(0,0,0,.35);
+  backdrop-filter:blur(6px);
+}
+#navbar a.nav-link{
+  color:#fff;position:relative;padding-bottom:4px;
+}
+#navbar a.nav-link::after{
+  content:"";position:absolute;bottom:0;right:0;width:0;height:2px;
+  background:var(--gold);transition:width .3s ease;
+}
+#navbar a.nav-link:hover::after{width:100%;}
+
+/* ---------- Hero (split layout) ---------- */
+.hero-split{
+  position:relative;
+  min-height:100svh;
+  background:var(--black);
+  overflow:hidden;
+  display:flex;align-items:center;
+}
+.hero-glow{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(196,30,42,.35), transparent 40%),
+    radial-gradient(circle at 90% 75%, rgba(196,30,42,.22), transparent 45%),
+    linear-gradient(180deg, #1a1414 0%, var(--black) 100%);
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(212,160,23,.15);border:1px solid var(--gold);
+  color:var(--gold-light);border-radius:999px;padding:6px 16px;
+  font-size:.8rem;letter-spacing:.5px;
+}
+.hero-img-wrap{
+  position:relative;
+  border-radius:22px;overflow:hidden;
+  box-shadow:0 30px 60px rgba(0,0,0,.5);
+  aspect-ratio:4/3;
+}
+.hero-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+.delivery-badge{
+  position:absolute;top:18px;left:18px;
+  background:var(--gold);color:var(--black);
+  font-family:'Cairo',sans-serif;font-weight:800;font-size:.8rem;
+  padding:10px 16px;border-radius:14px;
+  box-shadow:0 10px 20px rgba(0,0,0,.35);
+  transform:rotate(-4deg);
+}
+.bestseller-card{
+  position:absolute;bottom:18px;right:18px;left:18px;
+  max-width:220px;
+  background:rgba(20,17,16,.72);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;padding:14px 16px;color:#fff;
+  box-shadow:0 15px 30px rgba(0,0,0,.4);
+}
+.stats-line{color:#B8B0AC;font-family:'Cairo',sans-serif;font-weight:700;font-size:.95rem;}
+
+/* ---------- Branch cards (contact section) ---------- */
+.branch-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:14px;padding:16px 18px;
+  transition:border-color .25s ease, background .25s ease;
+}
+.branch-card:hover{border-color:var(--gold);background:rgba(255,255,255,.07);}
+
+.btn-primary{
+  background:var(--red);color:#fff;
+  box-shadow:0 8px 24px rgba(196,30,42,.45);
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(196,30,42,.6);background:var(--red-dark);}
+.btn-outline{
+  border:2px solid #fff;color:#fff;background:transparent;
+  transition:all .25s ease;
+}
+.btn-outline:hover{background:#fff;color:var(--black);}
+
+/* ---------- Reveal on scroll ---------- */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+/* ---------- Feature cards ---------- */
+.feature-card{
+  background:var(--cream);border-radius:18px;padding:28px 20px;text-align:center;
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.feature-card:hover{transform:translateY(-8px);box-shadow:0 16px 30px rgba(0,0,0,.12);}
+.feature-icon{font-size:2.2rem;display:block;margin-bottom:10px;}
+
+/* ---------- Section eyebrow pill ---------- */
+.section-eyebrow{
+  display:inline-block;
+  background:rgba(196,30,42,.08);
+  color:var(--red);
+  font-family:'Cairo',sans-serif;font-weight:800;font-size:.8rem;
+  border-radius:999px;padding:6px 18px;
+}
+.section-eyebrow-dark{
+  display:inline-block;
+  background:rgba(212,160,23,.12);
+  color:var(--gold-light);
+  font-family:'Cairo',sans-serif;font-weight:800;font-size:.8rem;
+  border-radius:999px;padding:6px 18px;
+}
+
+/* ---------- Menu ---------- */
+.menu-tabs button{
+  font-family:'Cairo',sans-serif;font-weight:700;
+  padding:10px 20px;border-radius:999px;border:2px solid #e7e2da;
+  background:#fff;color:var(--black);white-space:nowrap;
+  transition:all .25s ease;
+}
+.menu-tabs button.active,.menu-tabs button:hover{
+  background:var(--red);border-color:var(--red);color:#fff;
+}
+
+.menu-photo-card{
+  background:#fff;border-radius:18px;overflow:hidden;
+  box-shadow:0 10px 24px rgba(0,0,0,.07);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.menu-photo-card:hover{transform:translateY(-6px);box-shadow:0 20px 36px rgba(0,0,0,.14);}
+.menu-photo-media{
+  position:relative;aspect-ratio:4/3;
+  display:flex;align-items:center;justify-content:center;
+}
+.menu-photo-media.media-0{background:linear-gradient(135deg,#2a1616,var(--black));}
+.menu-photo-media.media-1{background:linear-gradient(135deg,var(--red),var(--red-dark));}
+.menu-photo-media.media-2{background:linear-gradient(135deg,#3a2c10,var(--black));}
+.menu-photo-img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.menu-photo-emoji{font-size:3.4rem;filter:drop-shadow(0 6px 10px rgba(0,0,0,.35));}
+.menu-price-badge{
+  position:absolute;bottom:12px;left:12px;
+  background:var(--gold);color:var(--black);
+  font-family:'Cairo',sans-serif;font-weight:800;font-size:.8rem;
+  padding:6px 14px;border-radius:10px;
+  box-shadow:0 8px 16px rgba(0,0,0,.3);
+}
+.menu-tag-badge{
+  position:absolute;top:12px;right:12px;
+  background:var(--red);color:#fff;
+  font-family:'Cairo',sans-serif;font-weight:800;font-size:.72rem;
+  padding:5px 12px;border-radius:999px;
+}
+
+/* ---------- Offers ---------- */
+.offer-card{
+  background:var(--black);color:#fff;border-radius:18px;padding:30px 24px;
+  position:relative;overflow:hidden;
+  border:1px solid rgba(212,160,23,.3);
+}
+.offer-card::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 100% 0%, rgba(196,30,42,.35), transparent 55%);
+}
+.offer-badge{
+  background:var(--gold);color:var(--black);font-family:'Cairo',sans-serif;font-weight:800;
+  font-size:.75rem;padding:4px 12px;border-radius:999px;display:inline-block;
+}
+
+/* ---------- Delivery ---------- */
+.delivery-section{
+  background:linear-gradient(135deg,var(--red) 0%, var(--red-dark) 100%);
+  color:#fff;position:relative;overflow:hidden;
+}
+.scooter-emoji{font-size:5rem;filter:drop-shadow(0 10px 20px rgba(0,0,0,.3));}
+
+/* ---------- Gallery ---------- */
+.gallery-item{border-radius:14px;overflow:hidden;position:relative;}
+.gallery-item img{transition:transform .5s ease;display:block;width:100%;height:100%;object-fit:cover;}
+.gallery-item:hover img{transform:scale(1.08);}
+
+/* ---------- Testimonials ---------- */
+.testi-card{
+  background:var(--cream);border-radius:16px;padding:26px;min-width:280px;
+  scroll-snap-align:start;
+}
+.stars{color:var(--gold);letter-spacing:2px;}
+
+/* ---------- Floating Call Button ---------- */
+.call-float{
+  position:fixed;bottom:22px;left:22px;z-index:90;
+  width:60px;height:60px;border-radius:50%;
+  background:var(--red);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(196,30,42,.5);
+  animation:pulse 2.4s infinite;
+}
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(196,30,42,.55);}
+  70%{box-shadow:0 0 0 16px rgba(196,30,42,0);}
+  100%{box-shadow:0 0 0 0 rgba(196,30,42,0);}
+}
+
+/* ---------- Scrollbar for menu tabs on mobile ---------- */
+.menu-tabs::-webkit-scrollbar{height:0;}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{transition:none;opacity:1;transform:none;}
+  .call-float{animation:none;}
+}

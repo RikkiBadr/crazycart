@@ -1,1 +1,202 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كريزي كارت | Crazy Cart - دمشق</title>
+<meta name="description" content="ألذ سندويشات الدجاج والبرغر في دمشق - توصيل سريع لكل مناطق دمشق">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: { colors: {
+    red: '#C41E2A', gold: '#D4A017'
+  }}}}
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav id="navbar">
+  <div class="max-w-7xl mx-auto px-5 flex items-center justify-between">
+    <span class="display text-white text-xl tracking-wide" data-restaurant-name>كريزي كارت</span>
+
+    <div class="hidden md:flex items-center gap-8 text-sm font-bold">
+      <a href="#home" class="nav-link">الرئيسية</a>
+      <a href="#menu" class="nav-link">المنيو</a>
+      <a href="#offers" class="nav-link">العروض</a>
+      <a href="#about" class="nav-link">من نحن</a>
+      <a href="#reviews" class="nav-link">آراء الزبائن</a>
+      <a href="#contact" class="nav-link">تواصل معنا</a>
+    </div>
+
+    <a href="#menu" class="hidden md:inline-block bg-red text-white text-sm font-bold px-5 py-2.5 rounded-full btn-primary">اطلب الآن</a>
+
+    <button id="mobile-menu-toggle" class="md:hidden text-white text-2xl">☰</button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden flex flex-col gap-4 px-6 py-5 mt-2 bg-black/95 text-white text-sm font-bold">
+    <a href="#home">الرئيسية</a>
+    <a href="#menu">المنيو</a>
+    <a href="#offers">العروض</a>
+    <a href="#about">من نحن</a>
+    <a href="#reviews">آراء الزبائن</a>
+    <a href="#contact">تواصل معنا</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="home" class="hero-split">
+  <div class="hero-glow"></div>
+  <div class="max-w-7xl mx-auto px-5 pt-32 pb-20 grid lg:grid-cols-2 gap-12 items-center relative z-10">
+
+    <div class="order-2 lg:order-1 reveal">
+      <div class="hero-img-wrap">
+        <img src="images/storefront.jpg" alt="مطعم كريزي كارت في دمشق">
+        <span class="delivery-badge" data-delivery-badge>30 د توصيل</span>
+        <div id="bestseller-card" class="bestseller-card"></div>
+      </div>
+    </div>
+
+    <div class="order-1 lg:order-2 text-center lg:text-right">
+      <span class="hero-badge reveal" data-hero-badge>🚀 نوصل الآن إلى معظم مناطق دمشق</span>
+      <h1 class="display text-white text-4xl sm:text-5xl md:text-6xl leading-tight mt-6 mb-5 reveal">
+        أطيب سندويشات <span style="color:#E13A3A;">الدجاج</span> في دمشق
+      </h1>
+      <p class="text-gray-300 text-lg mb-8 reveal" data-hero-desc>
+        استمتع بأشهى ساندويشات الدجاج والبرغر والوجبات مع توصيل سريع إلى معظم مناطق دمشق.
+      </p>
+      <div class="flex flex-wrap gap-4 justify-center lg:justify-start reveal">
+        <a data-call-link href="#" class="btn-primary px-8 py-4 rounded-full font-bold text-lg">اطلب الآن ←</a>
+        <a href="#menu" class="btn-outline px-8 py-4 rounded-full font-bold text-lg">تصفح المنيو</a>
+      </div>
+      <p class="stats-line reveal mt-8">
+        <span data-rating>٤.٩</span>/<span data-rating-out-of>٥</span> ⭐
+        <span class="mx-2 text-gray-600">|</span>
+        <span data-orders-delivered>+١٠,٠٠٠ طلب تم توصيله</span>
+      </p>
+    </div>
+  </div>
+</header>
+
+<!-- ============ FEATURES ============ -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div id="features-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"></div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section id="menu" class="py-20 bg-[color:var(--cream)]" style="background:#FFF7EC;">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <span class="section-eyebrow">قائمة الطعام</span>
+      <h2 class="display text-3xl md:text-4xl mt-2">تصفح المنيو الإلكتروني</h2>
+    </div>
+    <div id="menu-tabs" class="menu-tabs flex gap-3 overflow-x-auto pb-4 mb-8 justify-start md:justify-center"></div>
+    <div id="menu-grid"></div>
+  </div>
+</section>
+
+<!-- ============ OFFERS ============ -->
+<section id="offers" class="py-20 bg-black">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <span class="section-eyebrow-dark">لا تفوّت</span>
+      <h2 class="display text-3xl md:text-4xl mt-2 text-white">عروضنا اليومية</h2>
+    </div>
+    <div id="offers-grid" class="grid md:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- ============ DELIVERY ============ -->
+<section class="delivery-section py-20">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center gap-10 relative z-10">
+    <div class="scooter-emoji reveal">🛵</div>
+    <div class="text-center md:text-right reveal">
+      <h2 class="display text-3xl md:text-4xl text-white mb-4">نوصل طلبك بسرعة أينما كنت داخل دمشق</h2>
+      <p class="text-white/90 mb-6">فريق توصيل سريع يغطي معظم مناطق دمشق، اطلب الآن واستلم طلبك ساخناً</p>
+      <div class="flex flex-wrap justify-center md:justify-start gap-4">
+        <a data-call-link href="#" class="bg-white text-black px-8 py-4 rounded-full font-bold flex items-center gap-2 text-lg">
+          اتصل الآن ☎️
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <span class="section-eyebrow">لمحة من المطعم</span>
+      <h2 class="display text-3xl md:text-4xl mt-2">معرض الصور</h2>
+    </div>
+    <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+    <p class="text-sm text-gray-400 mt-4 text-center">* أضف صور منتجاتك الحقيقية لاحقاً — راجع تعليمات التعديل في data.js</p>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="reviews" class="py-20 bg-[color:var(--cream)]" style="background:#FFF7EC;">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <span class="section-eyebrow">ثقة عملائنا</span>
+      <h2 class="display text-3xl md:text-4xl mt-2">آراء الزبائن</h2>
+    </div>
+    <div id="testimonials-track" class="flex gap-6 overflow-x-auto pb-4" style="scroll-snap-type:x mandatory;"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-5 text-center reveal">
+    <span class="section-eyebrow">قصتنا</span>
+    <h2 class="display text-3xl md:text-4xl mt-2 mb-6">من نحن</h2>
+    <p class="text-gray-600 text-lg leading-loose" data-about-text></p>
+  </div>
+</section>
+
+<!-- ============ LOCATION / CONTACT ============ -->
+<section id="contact" class="py-20 bg-black text-white">
+  <div class="max-w-7xl mx-auto px-5 grid md:grid-cols-2 gap-10 items-center">
+    <div class="reveal">
+      <span class="section-eyebrow-dark">زورونا</span>
+      <h2 class="display text-3xl md:text-4xl mt-2 mb-6">فروعنا وساعات العمل</h2>
+      <div id="branches-list" class="space-y-4 mb-6"></div>
+      <p class="mb-6">🕒 <span data-hours></span></p>
+      <div class="flex gap-4">
+        <a data-call-link href="#" class="bg-red text-white px-8 py-3.5 rounded-full font-bold" style="background:#C41E2A;">اتصل الآن ☎️</a>
+      </div>
+    </div>
+    <div class="reveal rounded-2xl overflow-hidden h-72 md:h-80">
+      <iframe id="map-frame" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-[#0c0a0a] text-gray-400 py-10">
+  <div class="max-w-7xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-6">
+    <span class="display text-white text-lg" data-restaurant-name>كريزي كارت</span>
+    <div class="flex gap-5 text-xl">
+      <a id="social-facebook" href="#" target="_blank">📘</a>
+      <a id="social-instagram" href="#" target="_blank">📸</a>
+      <a id="social-tiktok" href="#" target="_blank">🎵</a>
+      <a data-call-link href="#">☎️</a>
+    </div>
+    <p class="text-sm">© <span data-year></span> كريزي كارت - جميع الحقوق محفوظة</p>
+  </div>
+</footer>
+
+<!-- ============ FLOATING CALL BUTTON ============ -->
+<a data-call-link href="#" class="call-float" aria-label="اتصل بنا">
+  <span class="text-2xl">📞</span>
+</a>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
