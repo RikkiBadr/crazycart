@@ -18,3 +18,4 @@
 .product-card,.review-grid article{background:#191713}
 
 @media(max-width:620px){.brand img{width:100px;height:64px}.hero h1{line-height:1.38;word-spacing:.1em}}
+.hero h1 .last-line{display:block;color:var(--white);margin-top:.18em}
