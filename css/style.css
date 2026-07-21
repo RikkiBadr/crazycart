@@ -10,12 +10,12 @@
 
 /* Brand and contrast refinements. */
 .brand-fallback[hidden]{display:none}
-.brand img{width:180px;height:105px}
+.brand img{width:360px;height:210px}
 .hero h1{line-height:1.34;word-spacing:.08em}
 .hero{background:radial-gradient(circle at 76% 40%,#751b16 0,#3e1210 23%,transparent 49%),radial-gradient(circle at 18% 88%,#49370a 0,transparent 34%),linear-gradient(125deg,#080808 42%,#171009 100%)}
 .menu-section,.reviews{background:radial-gradient(circle at 92% 12%,#32110e 0,transparent 30%),var(--black)}
 .why{background:linear-gradient(135deg,#090909 45%,#17130a)}
 .product-card,.review-grid article{background:#191713}
 
-@media(max-width:620px){.brand img{width:140px;height:82px}.hero h1{line-height:1.38;word-spacing:.1em}}
+@media(max-width:620px){.brand img{width:280px;height:164px}.hero h1{line-height:1.38;word-spacing:.1em}}
 .hero h1 .last-line{display:block;color:var(--white);margin-top:.18em}
