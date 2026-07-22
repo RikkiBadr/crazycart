@@ -19,3 +19,7 @@
 
 @media(max-width:620px){.brand img{width:280px;height:164px;right:auto;top:auto;transform:translate(45px,-24px)}.hero h1{line-height:1.38;word-spacing:.1em}}
 .hero h1 .last-line{display:block;color:var(--white);margin-top:.18em}
+
+/* Product posts are designed as square social-media artwork. */
+.product-image{height:auto;aspect-ratio:1/1}
+.product-image img{width:100%;height:100%;object-fit:cover;object-position:center}
