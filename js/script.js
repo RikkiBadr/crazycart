@@ -2,16 +2,14 @@ const grid = document.querySelector('#products-grid');
 const modal = document.querySelector('#call-modal');
 const visibleInitially = 9;
 
-function fallbackMarkup(name) {
-  return `<div class="product-fallback"><span>CRAZY CART</span><b>${name}</b><small>أضف صورة المنتج</small></div>`;
-}
-
 siteData.products.forEach((product, index) => {
   const card = document.createElement('article');
   card.className = `product-card${index >= visibleInitially ? ' extra-product' : ''}`;
   card.innerHTML = `<div class="product-image"><img src="assets/images/products/${product.image}" alt="${product.name}" loading="lazy"><span class="price">${product.price} <small>${siteData.currency}</small></span></div><div class="product-copy"><span class="product-no">${String(product.id).padStart(2,'0')}</span><h3>${product.name}</h3><p>${product.description}</p><button class="order-button call-trigger">اطلب بالاتصال <span>←</span></button></div>`;
   const img = card.querySelector('img');
-  img.addEventListener('error', () => { img.replaceWith(Object.assign(document.createElement('div'), { innerHTML: fallbackMarkup(product.name), className: 'fallback-wrap' })); }, { once: true });
+  img.addEventListener('error', () => {
+    card.remove();
+  }, { once: true });
   grid.append(card);
 });
 
