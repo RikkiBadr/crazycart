@@ -1,10 +1,8 @@
 const grid = document.querySelector('#products-grid');
 const modal = document.querySelector('#call-modal');
-const visibleInitially = 9;
-
-siteData.products.forEach((product, index) => {
+siteData.products.forEach((product) => {
   const card = document.createElement('article');
-  card.className = `product-card${index >= visibleInitially ? ' extra-product' : ''}`;
+  card.className = 'product-card';
   card.innerHTML = `<div class="product-image"><img src="assets/images/products/${product.image}" alt="${product.name}" loading="lazy"><span class="price">${product.price} <small>${siteData.currency}</small></span></div><div class="product-copy"><span class="product-no">${String(product.id).padStart(2,'0')}</span><h3>${product.name}</h3><p>${product.description}</p><button class="order-button call-trigger">اطلب بالاتصال <span>←</span></button></div>`;
   const img = card.querySelector('img');
   img.addEventListener('error', () => {
@@ -18,13 +16,6 @@ function branchContent(branch, compact = false) {
 }
 document.querySelector('#branch-grid').innerHTML = siteData.branches.map(b => branchContent(b)).join('');
 document.querySelector('#modal-branches').innerHTML = siteData.branches.map(b => branchContent(b, true)).join('');
-
-document.querySelector('#show-more').addEventListener('click', e => {
-  const open = e.currentTarget.getAttribute('aria-expanded') === 'true';
-  document.body.classList.toggle('menu-expanded', !open);
-  e.currentTarget.setAttribute('aria-expanded', String(!open));
-  e.currentTarget.innerHTML = open ? 'عرض باقي المنيو <span>↓</span>' : 'عرض أقل <span>↑</span>';
-});
 
 let lastFocus;
 function openModal() { lastFocus = document.activeElement; modal.hidden = false; document.body.classList.add('modal-open'); setTimeout(() => modal.querySelector('.modal-close').focus(), 0); }
