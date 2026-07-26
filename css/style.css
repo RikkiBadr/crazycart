@@ -33,3 +33,40 @@
 .hero-copy{text-shadow:0 3px 22px #000}
 @media(max-width:950px){.hero{grid-template-columns:1fr;gap:34px;min-height:auto;background-image:linear-gradient(180deg,#070707d6 0,#070707ba 48%,#070707ed 100%),url("../assets/images/hero/crazy-cart-full-hero.webp");background-position:32% center}.hero-visual{display:none}}
 @media(max-width:620px){.brand-wordmark strong{font-size:23px}.brand-wordmark b{font-size:19px}}
+
+/* Mobile hero: branded artwork above the Arabic copy. */
+@media(max-width:950px){
+  .hero{
+    grid-template-areas:
+      "visual"
+      "copy";
+    gap:30px;
+    padding-top:96px;
+    background:#070707;
+  }
+  .hero-copy{grid-area:copy}
+  .hero-visual{
+    grid-area:visual;
+    display:block;
+    width:100vw;
+    min-height:clamp(280px,70vw,520px);
+    margin-inline:calc(50% - 50vw);
+    background-image:
+      linear-gradient(180deg,transparent 70%,#070707 100%),
+      url("../assets/images/hero/crazy-cart-full-hero.webp");
+    background-size:cover;
+    background-position:left center;
+    background-repeat:no-repeat;
+  }
+}
+
+@media(max-width:620px){
+  .hero{
+    gap:24px;
+    padding-top:78px;
+  }
+  .hero-visual{
+    min-height:72vw;
+    background-position:18% center;
+  }
+}
