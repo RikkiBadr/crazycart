@@ -66,7 +66,9 @@
     padding-top:78px;
   }
   .hero-visual{
-    min-height:72vw;
-    background-position:18% center;
+    min-height:56vw;
+    max-height:250px;
+    background-size:135% auto;
+    background-position:12% 54%;
   }
 }
