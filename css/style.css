@@ -23,3 +23,13 @@
 /* Product posts are designed as square social-media artwork. */
 .product-image{height:auto;aspect-ratio:1/1}
 .product-image img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+/* Approved seamless full-width hero. */
+.brand-wordmark{display:grid;justify-items:center;line-height:.72;transform:rotate(-3deg);filter:drop-shadow(3px 4px 0 #751b16)}
+.brand-wordmark strong{color:var(--white);font-size:27px;font-weight:900;font-style:italic;letter-spacing:-2px}
+.brand-wordmark b{color:var(--yellow);font-size:23px;font-weight:900;font-style:italic;letter-spacing:-1px}
+.hero{min-height:760px;grid-template-columns:minmax(0,.92fr) minmax(520px,1.08fr);gap:clamp(34px,5vw,82px);background-image:linear-gradient(90deg,transparent 0 38%,#0707071f 46%,#070707b8 61%,#070707e0 100%),url("../assets/images/hero/crazy-cart-full-hero.webp");background-size:cover;background-position:center,calc(50% + 42px) center;background-repeat:no-repeat}
+.hero-visual{min-height:520px;pointer-events:none}
+.hero-copy{text-shadow:0 3px 22px #000}
+@media(max-width:950px){.hero{grid-template-columns:1fr;gap:34px;min-height:auto;background-image:linear-gradient(180deg,#070707d6 0,#070707ba 48%,#070707ed 100%),url("../assets/images/hero/crazy-cart-full-hero.webp");background-position:32% center}.hero-visual{display:none}}
+@media(max-width:620px){.brand-wordmark strong{font-size:23px}.brand-wordmark b{font-size:19px}}
