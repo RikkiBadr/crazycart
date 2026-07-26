@@ -69,6 +69,6 @@
     min-height:56vw;
     max-height:250px;
     background-size:135% auto;
-    background-position:12% 54%;
+    background-position:-12% 54%;
   }
 }
