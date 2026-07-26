@@ -68,7 +68,19 @@
   .hero-visual{
     min-height:56vw;
     max-height:250px;
+    position:relative;
+    overflow:hidden;
+    background:none;
+  }
+  .hero-visual::before{
+    content:"";
+    position:absolute;
+    inset:0 -24vw;
+    background-image:
+      linear-gradient(180deg,transparent 70%,#070707 100%),
+      url("../assets/images/hero/crazy-cart-full-hero.webp");
     background-size:135% auto;
     background-position:-42% 54%;
+    background-repeat:no-repeat;
   }
 }
